@@ -39,22 +39,22 @@ function fibonacci(n) {
   }
 
   // Recursive case: Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
-  return fibonacci(n - 1) + fibonacci(n - 2);
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
 // Example usage:
-const result = fibonacci(6);
-console.log(result); // Output: 13
+const result = fibonacci(6)
+console.log(result) // Output: 13
 
 
 function coinFlips(n) {
   // Base case: when there are no more flips, return an array with an empty string
   if (n === 0) {
-    return [''];
+    return ['']
   }
 
   // Recursive case: generate outcomes for (n - 1) flips and append 'H' and 'T'
-  const prevOutcomes = coinFlips(n - 1);
+  const prevOutcomes = coinFlips(n - 1)
   const currentOutcomes = [];
 
   for (const outcome of prevOutcomes) {
@@ -75,23 +75,23 @@ console.log(result);
 function letterCombinations(letters) {
   function generateCombinations(index, currentCombination, combinations) {
     if (index === letters.length) {
-      combinations.push(currentCombination);
-      return;
+      combinations.push(currentCombination)
+      return
     }
 
     // Include the current letter in the combination
     generateCombinations(index + 1, currentCombination + letters[index], combinations);
 
     // Exclude the current letter in the combination
-    generateCombinations(index + 1, currentCombination, combinations);
+    generateCombinations(index + 1, currentCombination, combinations)
   }
 
-  const result = [];
-  generateCombinations(0, '', result);
+  const result = []
+  generateCombinations(0, '', result)
   return result;
 }
 
 // Example usage:
-const result = letterCombinations(["a", "b", "c"]);
-console.log(result);
+const result = letterCombinations(["a", "b", "c"])
+console.log(result)
 // Output: ["a","b","c","ab","ac","ba","bc","ca","cb","abc","acb","bac","bca","cab","cba"]
